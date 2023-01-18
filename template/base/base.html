@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+		<meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+		<title>Claver {% block title %}-My Portfolio {% endblock %}</title>
+		<meta content="" name="description">
+		<meta content="" name="keywords">
+
+		<!-- Favicons -->
+		<link href="{% static 'assets/img/claver-icon.png' %}" rel="icon">
+		<link href="{% static 'assets/img/claver-b-icon.png' %}" rel="apple-touch-icon">
+
+		<!-- Vendor CSS Files -->
+		<link href="{% static 'assets/vendor/aos/aos.css' %}" rel="stylesheet">
+		<link href="{% static 'assets/vendor/bootstrap/css/bootstrap.css' %}" rel="stylesheet">
+		<link href="{% static 'assets/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+		<link href="{% static 'assets/vendor/boxicons/css/boxicons.css' %}" rel="stylesheet">
+		<link href="{% static 'assets/vendor/glightbox/css/glightbox.css' %}" rel="stylesheet">
+		<link href="{% static 'assets/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+
+		<!-- Template Main CSS File -->
+		<link href="{% static 'assets/css/style.css' %}" rel="stylesheet">
+
+		<!-- Custom Main CSS File -->
+		<link href="{% static 'assets/css/custom.css' %}" rel="stylesheet">
+
+		<!---- jquery -------->
+		<script src="{% static 'assets/js/jquery-3.6.0.js' %}"></script>
+	</head>
+
+	<body>
+
+		<!-- ======= Mobile nav toggle button ======= -->
+		<i class="bi bi-list mobile-nav-toggle d-xl-none"></i>
+
+		<!-- ======= Header ======= -->
+		<header id="header">
+			<div class="d-flex flex-column">
+
+				<div class="profile">
+					<img src="{% static 'assets/img/profile-img1.jpg' %}" alt="" class="img-fluid rounded-circle">
+					<h1 class="text-light"><a href="{% url 'home:home' %}" id="my-name">Peter Claver</a></h1>
+					<div class="social-links mt-3 text-center">
+						{% for i in portfolio %}
+						<a href="{{ i.linkedin_link }}" class="github"><i class="bx bxl-github"></i></a>
+						<a href="{{ i.linkedin_link }}" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+						{% endfor %}
+					</div>
+				</div>
+
+				<nav id="navbar" class="nav-menu navbar">
+					<ul>
+						<li><a href="{% url 'home:home' %}#hero" class="nav-link scrollto active"><i class="bx bx-home"></i> <span>Home</span></a></li>
+						{% block nav %}
+						<li><a href="{% url 'home:about' %}#about" class="nav-link scrollto"><i class="bx bx-user"></i> <span>About</span></a></li>
+						<li><a href="{% url 'home:resume' %}#resume" class="nav-link scrollto"><i class="bx bx-file-blank"></i> <span>Resume</span></a></li>
+						<li><a href="{% url 'home:portfolio' %}#portfolio" class="nav-link scrollto"><i class="bx bx-book-content"></i> <span>Portfolio</span></a></li>
+						<li><a href="{% url 'home:services' %}#services" class="nav-link scrollto"><i class="bx bx-server"></i> <span>Services</span></a></li>
+						<li><a href="{% url 'home:contact' %}#contact" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>Contact</span></a></li>
+						{% endblock %}
+					</ul>
+				</nav>
+				<!-- .nav-menu -->
+			</div>
+		</header>
+		<!-- End Header -->
+		{% block body %}
+
+
+		{% endblock %}
+
+		<!-- ======= Footer ======= -->
+		<footer id="footer">
+			<div class="container">
+				<div class="copyright">
+					&copy; Copyright {{ now|date:"Y" }}<strong> <span>peter-claver</span></strong>
+				</div>
+				<div class="credits">
+					<!-- All the links in the footer should remain intact. -->
+					<!-- You can delete the links only if you purchased the pro version. -->
+					<!-- Licensing information: https://bootstrapmade.com/license/ -->
+					<!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/iportfolio-bootstrap-portfolio-websites-template/ -->
+				</div>
+			</div>
+		</footer><!-- End  Footer -->
+
+		<a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+		<!-- Vendor JS Files -->
+		<script src="{% static 'assets/vendor/purecounter/purecounter_vanilla.js' %}"></script>
+		<script src="{% static 'assets/vendor/aos/aos.js' %}"></script>
+		<script src="{% static 'assets/vendor/bootstrap/js/bootstrap.js' %}"></script>
+		<script src="{% static 'assets/vendor/glightbox/js/glightbox.js' %}"></script>
+		<script src="{% static 'assets/vendor/isotope-layout/isotope.pkgd.js' %}"></script>
+		<script src="{% static 'assets/vendor/swiper/swiper-bundle.min.js' %}"></script>
+		<script src="{% static 'assets/vendor/typed.js/typed.js' %}"></script>
+		<script src="{% static 'assets/vendor/waypoints/noframework.waypoints.js' %}"></script>
+
+		<!-- Template Main JS File -->
+		<script src="{% static 'assets/js/main.js' %}"></script>
+
+	</body>
+
+</html>

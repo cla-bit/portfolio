@@ -1,0 +1,11 @@
+.icon-box {
+
+}
+
+.icon-box > .title, .icon-box > .description {
+    margin-left: 0;
+}
+
+.text-light #my-name {
+    color: #000;
+}
