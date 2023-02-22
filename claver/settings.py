@@ -152,8 +152,8 @@ SITE_ID = 1
 
 EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"  # django.core.mail.backends.smtp.EmailBackend
 EMAIL_HOST = "smtp.gmail.com"   # email host port=smtp.gmail.com / domain name
-EMAIL_HOST_USER = "doublep098@gmail.com"  # email host user
-EMAIL_HOST_PASSWORD = "tdmqiszamftqlfsq"  # email password
+EMAIL_HOST_USER = ""  # email host user
+EMAIL_HOST_PASSWORD = ""  # email password
 EMAIL_PORT = 465
 EMAIL_USE_SSL = True
 EMAIL_USE_TLS = False
